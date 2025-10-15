@@ -1,60 +1,57 @@
-# Predicting Employee Attrition at Salifort Motors Using Machine Learning
+# 🧠 Predicting Employee Attrition at Salifort Motors Using Machine Learning
 
-## 📊 Project Overview
-This project focuses on predicting whether an employee at **Salifort Motors** will leave or stay at the company using machine learning models. The goal is to help the Human Resources (HR) department proactively identify at-risk employees and implement effective retention strategies.  
+## 📘 Project Overview
+This project focuses on predicting **whether an employee at Salifort Motors will leave or stay** using machine learning.  
+By leveraging HR data, we built a predictive model to identify employees at risk of attrition and provide actionable insights for HR to improve employee satisfaction and retention.
 
-By analyzing employee data such as satisfaction level, evaluation score, workload, and promotion history, we developed a predictive model that provides actionable insights into the factors influencing attrition.  
+**Goal:**  
+Help Salifort Motors make data-driven HR decisions that reduce turnover and improve productivity.
 
-**Model Performance:**  
-- **Best Model:** Random Forest Classifier (tuned using GridSearchCV)  
-- **AUC Score:** 0.96  
-- **Accuracy:** 93%  
+**Best Model:** Random Forest Classifier  
+**Performance:** AUC = 0.96 | Accuracy = 93%  
 
 ---
 
 ## 💼 Business Understanding
-### **Stakeholder:**  
-The Human Resources (HR) team at Salifort Motors.
+**Stakeholder:** Human Resources (HR) Department, Salifort Motors  
 
-### **Business Problem:**  
-Employee turnover has increased operational costs and affected productivity. The company seeks to understand what factors drive employees to leave and use predictive analytics to reduce attrition rates.
+**Business Problem:**  
+High employee turnover increases recruitment costs and reduces productivity. The company needs to understand key factors contributing to attrition and proactively retain valuable employees.
 
-### **Business Objective:**  
-1. Identify key factors influencing employee departures.  
-2. Build a predictive model to forecast employee attrition.  
-3. Provide data-driven recommendations for improving retention.
+**Business Objective:**  
+- Identify patterns and key factors that influence employee departures.  
+- Build a predictive model to forecast attrition risk.  
+- Recommend strategic HR interventions based on insights.
 
 ---
 
 ## 🧠 Data Understanding
-The dataset contains historical HR data from Salifort Motors, including:  
-- **Satisfaction Level**  
-- **Last Evaluation**  
-- **Number of Projects**  
-- **Average Monthly Hours**  
-- **Time Spent at Company**  
-- **Promotion in Last 5 Years**  
-- **Department and Salary Information**  
+The dataset contains HR records from Salifort Motors, including:  
+- **Satisfaction level**  
+- **Last evaluation score**  
+- **Average monthly hours**  
+- **Number of projects**  
+- **Time spent at company**  
+- **Promotion in last 5 years**  
+- **Salary level**  
 
-**Data Timeframe:** Internal HR data covering multiple years of employment records.  
+**Exploratory Data Analysis (EDA):**
+- **Box plots & histograms**: Visualized distribution of satisfaction levels and hours worked.  
+- **Scatter plots**: Showed correlation between satisfaction and evaluation.  
+- **Heatmap**: Identified strong negative correlation between satisfaction level and attrition.
 
-### **Exploratory Data Analysis (EDA):**
-- Box plots and histograms were used to visualize the distributions of satisfaction level and working hours.  
-- Scatter plots highlighted the relationship between evaluation scores and satisfaction levels.  
-- A heatmap revealed strong negative correlations between satisfaction level and attrition.
-
-**Key Finding:** Employees who work longer hours but have low satisfaction are more likely to leave.
+**Key Finding:**  
+Employees with **high workload** and **low satisfaction** were more likely to leave.
 
 ---
 
 ## ⚙️ Modeling and Evaluation
-Several machine learning models were tested, including Logistic Regression, Decision Tree, and Random Forest.  
+Multiple machine learning algorithms were tested:
+- Logistic Regression  
+- Decision Tree  
+- Random Forest (best-performing model)  
 
-### **Best Performing Model:**  
-**Random Forest Classifier**  
-- Tuned using **GridSearchCV** for optimal hyperparameters.  
-- **Cross-validation** used to ensure model generalization.  
-- **Evaluation Metrics:** Accuracy, Precision, Recall, F1-score, and AUC.
+**Best Model:** Random Forest (tuned via GridSearchCV)  
 
 | Metric      | Training | Test |
 |--------------|-----------|------|
@@ -64,57 +61,34 @@ Several machine learning models were tested, including Logistic Regression, Deci
 | F1-Score     | 0.93      | 0.92 |
 | AUC          | 0.98      | 0.96 |
 
-### **Feature Engineering:**
-- Created a new binary variable **`overworked`** to capture employees with high working hours.  
-- Dropped redundant features (e.g., satisfaction level) to reduce multicollinearity.  
-- Scaled numerical variables for better model performance.
+**Feature Engineering:**
+- Created a binary feature `overworked` to capture employees with high working hours.  
+- Dropped redundant variables and standardized features.  
+- Used 5-fold cross-validation for robust evaluation.
 
 ---
 
-## 🧩 Key Insights
-1. **Low satisfaction level** is the strongest predictor of attrition.  
-2. **Overworked employees** (high average monthly hours) are more likely to leave.  
-3. **Lack of promotion** within five years significantly increases turnover risk.  
-4. **Departmental and salary factors** also influence employee retention.  
+## 🔍 Key Insights
+1. **Low satisfaction** and **excessive workload** strongly predict employee attrition.  
+2. **Lack of promotion** in 5 years correlates with higher turnover risk.  
+3. **High performers** working long hours without recognition are at greater risk of leaving.  
 
 ---
 
-## 🏁 Conclusion
-The Random Forest model successfully predicts employee attrition with high accuracy. By addressing workload balance, improving recognition, and fostering promotions, Salifort Motors can significantly reduce employee turnover and improve satisfaction.
+## 🏁 Conclusion & Recommendations
+The Random Forest model effectively predicts attrition and provides valuable insights into employee behavior.  
 
-### **Recommendations:**
-- Implement regular employee satisfaction surveys.  
-- Review workload and assign projects more evenly.  
-- Develop a structured promotion and recognition program.  
-- Use this model in HR dashboards for ongoing monitoring.
-
----
-
-## 🔮 Next Steps
-1. **Deploy** the model using Flask for integration into HR analytics dashboards.  
-2. **Monitor** prediction accuracy in real-world scenarios and retrain periodically.  
-3. **Enhance** the dataset with demographic and departmental details for improved insights.  
-4. **Expand** to predictive modeling for performance improvement and engagement scores.
+**Recommendations:**
+- Conduct regular satisfaction surveys.  
+- Monitor workloads and ensure work-life balance.  
+- Improve recognition and promotion systems.  
+- Use this model for ongoing HR analytics and retention forecasting.
 
 ---
 
-## 🧰 Tools and Technologies
-- **Languages:** Python  
-- **Libraries:** pandas, NumPy, scikit-learn, matplotlib, seaborn  
-- **Modeling:** Random Forest, Logistic Regression, GridSearchCV  
-- **Visualization:** Matplotlib, Seaborn  
-- **Development Environment:** Jupyter Notebook / Visual Studio Code  
-- **Version Control:** Git and GitHub  
+## 🚀 How to Run This Project
 
----
-
-## 🧑‍💼 About the Author
-**Name:** Sheku Bangura  
-**Certification:** Google Advanced Data Analytics Professional Certificate  
-**Role:** Data Analyst / Aspiring Data Scientist  
-
-I’m passionate about leveraging data analytics and machine learning to solve real-world business challenges. This project reflects my ability to translate complex data into strategic insights and actionable business outcomes.
-
----
-
-## 📂 Repository Structure
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/yourusername/salifort-attrition-prediction.git
+cd salifort-attrition-prediction
